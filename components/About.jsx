@@ -12,14 +12,14 @@ const skills = [
   { name: "Git & GitHub", icon: <GitBranch size={20} /> },
 ]
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Handa Robinson",
-    role: "Founder / CEO, iRob Tech",
-    quote:
-      "Clinton delivered an exceptional website that exceeded our expectations. His attention to detail and technical expertise made our project a success.",
-  },
+// const testimonials = [
+//   {
+//     id: 1,
+//     name: "Handa Robinson",
+//     role: "Founder / CEO, iRob Tech",
+//     quote:
+//       "Clinton delivered an exceptional website that exceeded our expectations. His attention to detail and technical expertise made our project a success.",
+//   },
   // {
   //   id: 2,
   //   name: "Michael Chen",
@@ -34,7 +34,7 @@ const testimonials = [
   //   quote:
   //     "Clinton's technical skills and creativity helped transform our vision into reality. He's responsive, professional, and delivers outstanding work.",
   // },
-]
+// ]
 
 const About = () => {
   return (
