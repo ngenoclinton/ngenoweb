@@ -51,7 +51,7 @@ const projects = [
       "React Hook Form",
       "Zod",
       "EmailJS",
-      "Vercel",
+      "cPanel",
     ],
     liveLink: "https://pelletsdata.co.ke/",
     githubLink: "#",

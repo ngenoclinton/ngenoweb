@@ -1,81 +1,106 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Send, Phone, Mail, MapPin, ExternalLink } from "lucide-react"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Send, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = "service_oiqct4m";
+const TEMPLATE_ID = "template_6zr4bn1";
+const PUBLIC_KEY = "nMwHBHLEEsky5blhI";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
 
-  const [errors, setErrors] = useState({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validateForm = () => {
-    const newErrors = {}
+    const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required"
+      newErrors.name = "Name is required";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required"
+      newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid"
+      newErrors.email = "Email is invalid";
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required"
+      newErrors.message = "Message is required";
     }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
-    })
+    });
 
     // Clear error when user types
     if (errors[name]) {
       setErrors({
         ...errors,
         [name]: "",
-      })
+      });
     }
-  }
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (validateForm()) {
-      setIsSubmitting(true)
+      setIsSubmitting(true);
 
       // This will be replaced with EmailJS integration
       // For now, we'll simulate the form submission
       setTimeout(() => {
-        setIsSubmitting(false)
-        setIsSubmitted(true)
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        })
+        // setIsSubmitting(false)
+        // setIsSubmitted(true)
+        // setFormData({
+        //   name: "",
+        //   email: "",
+        //   message: "",
+        // })
+        const templateParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        };
 
+        emailjs
+          .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+          .then(() => {
+            setIsSubmitting(false);
+            setIsSubmitted(true);
+            setFormData({ name: "", email: "", message: "" });
+            setTimeout(() => setIsSubmitted(false), 5000);
+          })
+          .catch((error) => {
+            console.error("EmailJS error:", error);
+            setIsSubmitting(false);
+            alert(
+              "There was a problem sending your message. Please try again later."
+            );
+          });
         // Reset submission status after 5 seconds
         setTimeout(() => {
-          setIsSubmitted(false)
-        }, 5000)
-      }, 1500)
+          setIsSubmitted(false);
+        }, 5000);
+      }, 1500);
     }
-  }
+  };
 
   return (
     <div className="container mx-auto px-6 md:px-12">
@@ -89,7 +114,8 @@ const Contact = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Me</h2>
         <div className="w-20 h-1 bg-[#55e6a5] mx-auto mb-6"></div>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Have a project in mind or want to discuss a potential collaboration? Feel free to reach out!
+          Have a project in mind or want to discuss a potential collaboration?
+          Feel free to reach out!
         </p>
       </motion.div>
 
@@ -122,12 +148,18 @@ const Contact = () => {
                   ></path>
                 </svg>
                 <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
-                <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                <p>
+                  Thank you for reaching out. I'll get back to you as soon as
+                  possible.
+                </p>
               </motion.div>
             ) : (
               <>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Name
                   </label>
                   <input
@@ -141,11 +173,16 @@ const Contact = () => {
                     } rounded-md focus:outline-none focus:ring-2 focus:ring-[#009689]/20`}
                     placeholder="Your name"
                   />
-                  {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Email
                   </label>
                   <input
@@ -159,11 +196,16 @@ const Contact = () => {
                     } rounded-md focus:outline-none focus:ring-2 focus:ring-[#009689]/20`}
                     placeholder="Your email"
                   />
-                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Message
                   </label>
                   <textarea
@@ -177,7 +219,11 @@ const Contact = () => {
                     } rounded-md focus:outline-none focus:ring-2 focus:ring-[#009689]/20`}
                     placeholder="Your message"
                   ></textarea>
-                  {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
 
                 <button
@@ -233,6 +279,7 @@ const Contact = () => {
               <div>
                 <h4 className="text-white text-sm font-medium">Phone</h4>
                 <p className="text-[#55e6a5]">+254 (070) 776-3494</p>
+                <p className="text-[#55e6a5]">+254 (070) 762-3807</p>
               </div>
             </div>
 
@@ -254,7 +301,9 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-white text-sm font-medium">Location</h4>
-                <p className="text-[#55e6a5]">Roysambu, Near Thika Road Mall (TRM), Nairobi, Kenya.</p>
+                <p className="text-[#55e6a5]">
+                  Roysambu, Near Thika Road Mall (TRM), Nairobi, Kenya.
+                </p>
               </div>
             </div>
           </div>
@@ -292,7 +341,13 @@ const Contact = () => {
             <div className="absolute bottom-3 right-3 z-10">
               <div className="flex flex-col gap-2">
                 <button className="bg-white rounded-sm p-1 shadow-md">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       d="M12 5V19M5 12H19"
                       stroke="black"
@@ -303,8 +358,20 @@ const Contact = () => {
                   </svg>
                 </button>
                 <button className="bg-white rounded-sm p-1 shadow-md">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
               </div>
@@ -313,7 +380,7 @@ const Contact = () => {
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

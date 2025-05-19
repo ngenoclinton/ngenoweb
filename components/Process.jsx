@@ -7,30 +7,29 @@ import Link from "next/link"
 const processSteps = [
   {
     id: 1,
-    title: "CONCEPT",
+    title: "Plan",
     icon: <Lightbulb size={24} />,
     description:
-      "Say goodbye to the hassle of managing multiple providers and get an all-in-one website solution that covers design, development, and content creation.",
-    details: ["Reviewing any existing branding", "Target audience and competitors research", "Developing a strategy"],
+      "I start by understanding your requirements, researching your industry, and planning the architecture of your project.",
+    details: ["Requirement gathering", "Market research", "Architecture planning"],
   },
   {
     id: 2,
-    title: "DESIGN",
+    title: "Design",
     icon: <PenTool size={24} />,
     description:
-      "Say goodbye to the hassle of managing multiple providers and get an all-in-one website solution that covers design, development, and content creation.",
-    details: ["Reviewing any existing branding", "Target audience and competitors research", "Developing a strategy"],
+      "I create wireframes and design mockups that align with your brand identity and provide the best user experience.",
+    details: ["Wireframing", "UI/UX design", "Responsive layouts"],
   },
   {
     id: 3,
-    title: "DEVELOPMENT",
+    title: "Develop",
     icon: <Code size={24} />,
     description:
-      "Say goodbye to the hassle of managing multiple providers and get an all-in-one website solution that covers design, development, and content creation.",
-    details: ["Reviewing any existing branding", "Target audience and competitors research", "Developing a strategy"],
+      "I build your application using modern technologies and best practices to ensure scalability, performance, and security.",
+    details: ["Clean code architecture", "Performance optimization", "Testing and debugging"],
   },
 ]
-
 const Process = () => {
   return (
     <div className="container mx-auto px-6 md:px-12 py-20">
