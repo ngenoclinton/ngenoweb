@@ -4,102 +4,214 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ExternalLink, Github, X, Lock, ChevronLeft, ChevronRight } from "lucide-react"
 
+// const projects = [
+//   {
+//     id: 1,
+//     title: "Little Market Nursery & School Club",
+//     description:
+//       "A modern, responsive website for a children's nursery featuring online registration, parent resources, and administrative tools.",
+//     images: [
+//       "/projects/little-market-2.jpeg",
+//       // "/projects/little-market-2.jpeg?text=Registration+Form",
+//       // "/projects/little-market-2.jpeg?text=Parent+Portal",
+//     ],
+//     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "EmailJS", "Vercel"],
+//     liveLink: "https://little-market-nursery.vercel.app/",
+//     githubLink: "#",
+//     isPrivateRepo: true,
+//     details: {
+//       overview:
+//         "A comprehensive digital solution for a children's nursery, providing parents with easy access to registration, resources, and school information.",
+//       features: [
+//         "Online registration system",
+//         "Digital document submission",
+//         "Staff profiles and photo gallery",
+//         "Unified email template system",
+//         "Club registration and management",
+//       ],
+//       challenges:
+//         "Implemented a secure document handling system while ensuring an intuitive interface for parents with varying technical abilities. Created a unified email template system for consistent communication.",
+//     },
+//   },
+//   {
+//     id: 2,
+//     title: "Pellets Analytics",
+//     description:
+//       "A comprehensive data analytics landing page for a client company, featuring consultation and employee training services.",
+//     images: [
+//       "/projects/pellets-landing.jpeg",
+//       // "/projects/pelltes-landing.jpeg?text=Services+Section",
+//       // "/projects/pelltes-landing.jpeg?text=Team+Profiles",
+//     ],
+//     technologies: [
+//       "Next.js",
+//       "TypeScript",
+//       "Tailwind CSS",
+//       "Framer Motion",
+//       "React Hook Form",
+//       "Zod",
+//       "EmailJS",
+//       "cPanel",
+//     ],
+//     liveLink: "https://pelletsdata.co.ke/",
+//     githubLink: "#",
+//     isPrivateRepo: true,
+//     liveStatus: "Active",
+//     details: {
+//       overview:
+//         "A professional data analytics platform designed for Pellets Data Analysts, a client company specializing in transforming complex data into actionable business insights.",
+//       features: [
+//         "Responsive contact and consultation system",
+//         "Service showcase with animated elements",
+//         "Team member profiles highlighting expertise",
+//         "Client testimonials and case studies section",
+//         "Comprehensive contact form with validation",
+//       ],
+//       challenges:
+//         "Balanced visual appeal with performance optimization while making complex data concepts accessible to non-technical users. Designed responsive components that maintain functionality across all devices.",
+//     },
+//   },
+//   {
+//     id: 3,
+//     title: "Bulk SMS Web Platform",
+//     description: "A robust messaging platform for sending customized bulk SMS and managing voice call campaigns.",
+//     images: [
+//       "/projects/bulksms_LP.jpeg",
+//       "/projects/Bulk_dash.jpeg",
+//       // "/projects/bulksms_LP.jpeg?text=Analytics+Dashboard",
+//     ],
+//     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion","JavaScript",],
+//     liveLink: "https://bulk-manager-fdpt6ialn-ngenoclintons-projects.vercel.app/",
+//     githubLink: "#",
+//     isPrivateRepo: true,
+//     details: {
+//       overview:
+//         "An enterprise-grade communication tool enabling businesses to reach clients via SMS and voice calls with efficiency and scalability.",
+//       features: [
+//         "SMS scheduling and delivery status tracking",
+//         "Voice call campaign interface with reporting",
+//         "User-friendly dashboard with real-time insights",
+//         "Contact list import/export and management",
+//         "Secure user authentication and role management",
+//       ],
+//       challenges:
+//         "Developed reliable message delivery systems with asynchronous processing for voice calls. Created an intuitive UX for complex campaign setup and analytics reporting.",
+//     },
+//   },
+// ]
 const projects = [
   {
     id: 1,
-    title: "Little Market Nursery & School Club",
-    description:
-      "A modern, responsive website for a children's nursery featuring online registration, parent resources, and administrative tools.",
+    title: "Agri Marketplace",
+    description: "A B2B digital marketplace where fair food trade is made easy, fast and transparent.",
     images: [
-      "/projects/little-market-2.jpeg",
-      // "/projects/little-market-2.jpeg?text=Registration+Form",
-      // "/projects/little-market-2.jpeg?text=Parent+Portal",
+      "/placeholder.svg?height=600&width=1200",
+      "/placeholder.svg?height=600&width=1200&text=Agri+Dashboard",
+      "/placeholder.svg?height=600&width=1200&text=Agri+Mobile",
     ],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "EmailJS", "Vercel"],
-    liveLink: "https://little-market-nursery.vercel.app/",
+    technologies: ["React", "Node.js", "MongoDB", "Express", "WebSockets"],
+    liveLink: "#",
     githubLink: "#",
     isPrivateRepo: true,
     details: {
-      overview:
-        "A comprehensive digital solution for a children's nursery, providing parents with easy access to registration, resources, and school information.",
+      overview: "A digital B2B market solution that brings together Farmers and Industrial Buyers.",
       features: [
-        "Online registration system",
-        "Digital document submission",
-        "Staff profiles and photo gallery",
-        "Unified email template system",
-        "Club registration and management",
+        "Global marketplace for agricultural products",
+        "Secure online payment processing",
+        "Product quality verification",
+        "End-to-end logistics services",
+        "Real-time bidding and negotiation",
+        "Verified buyer and seller profiles",
       ],
       challenges:
-        "Implemented a secure document handling system while ensuring an intuitive interface for parents with varying technical abilities. Created a unified email template system for consistent communication.",
+        "Implemented a secure bidding system with real-time updates using WebSockets. Developed a logistics tracking system that integrates with multiple service providers while maintaining data consistency.",
     },
   },
   {
     id: 2,
-    title: "Pellets Analytics",
-    description:
-      "A comprehensive data analytics landing page for a client company, featuring consultation and employee training services.",
+    title: "Construction Management Platform",
+    description: "A comprehensive project management solution for real estate and construction projects.",
     images: [
-      "/projects/pellets-landing.jpeg",
-      // "/projects/pelltes-landing.jpeg?text=Services+Section",
-      // "/projects/pelltes-landing.jpeg?text=Team+Profiles",
+      "/placeholder.svg?height=600&width=1200",
+      "/placeholder.svg?height=600&width=1200&text=Construction+Timeline",
+      "/placeholder.svg?height=600&width=1200&text=Budget+Dashboard",
     ],
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "React Hook Form",
-      "Zod",
-      "EmailJS",
-      "cPanel",
-    ],
-    liveLink: "https://pelletsdata.co.ke/",
+    technologies: ["React", "Next.js", "Firebase", "TailwindCSS", "Chart.js"],
+    liveLink: "#",
     githubLink: "#",
-    isPrivateRepo: true,
-    liveStatus: "Active",
+    isPrivateRepo: false,
     details: {
       overview:
-        "A professional data analytics platform designed for Pellets Data Analysts, a client company specializing in transforming complex data into actionable business insights.",
+        "From Concept to Closeout, a complete project management solution to plan, execute, monitor, control, and close projects on time and on budget.",
       features: [
-        "Responsive contact and consultation system",
-        "Service showcase with animated elements",
-        "Team member profiles highlighting expertise",
-        "Client testimonials and case studies section",
-        "Comprehensive contact form with validation",
+        "Real-time project collaboration",
+        "Automated approval workflows",
+        "Document management system",
+        "Budget tracking and forecasting",
+        "Interactive Gantt charts",
+        "Mobile-friendly site inspections",
       ],
       challenges:
-        "Balanced visual appeal with performance optimization while making complex data concepts accessible to non-technical users. Designed responsive components that maintain functionality across all devices.",
+        "Created a system for complex approval hierarchies and document versioning. Developed intuitive visualization tools for project timelines and budget tracking.",
     },
   },
   {
     id: 3,
-    title: "Bulk SMS Web Platform",
-    description: "A robust messaging platform for sending customized bulk SMS and managing voice call campaigns.",
+    title: "Fitness Community Platform",
+    description: "A global fitness community with studio finder, training programs, and wellness solutions.",
     images: [
-      "/projects/bulksms_LP.jpeg",
-      "/projects/Bulk_dash.jpeg",
-      // "/projects/bulksms_LP.jpeg?text=Analytics+Dashboard",
+      "/placeholder.svg?height=600&width=1200",
+      "/placeholder.svg?height=600&width=1200&text=Fitness+Classes",
+      "/placeholder.svg?height=600&width=1200&text=Nutrition+Planner",
     ],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion","JavaScript",],
-    liveLink: "https://bulk-manager-fdpt6ialn-ngenoclintons-projects.vercel.app/",
+    technologies: ["React", "Redux", "Node.js", "MongoDB", "Stripe"],
+    liveLink: "#",
     githubLink: "#",
     isPrivateRepo: true,
     details: {
       overview:
-        "An enterprise-grade communication tool enabling businesses to reach clients via SMS and voice calls with efficiency and scalability.",
+        "A global fitness community that brings complete wellness solutions from functional training and HIIT, to nutrition, challenges and accountability.",
       features: [
-        "SMS scheduling and delivery status tracking",
-        "Voice call campaign interface with reporting",
-        "User-friendly dashboard with real-time insights",
-        "Contact list import/export and management",
-        "Secure user authentication and role management",
+        "Studio location finder",
+        "Membership management",
+        "Franchise opportunity portal",
+        "Workout tracking and analytics",
+        "Nutrition planning tools",
+        "Community challenges and events",
       ],
       challenges:
-        "Developed reliable message delivery systems with asynchronous processing for voice calls. Created an intuitive UX for complex campaign setup and analytics reporting.",
+        "Built a scalable location-based search system for studios worldwide. Implemented secure membership management with recurring payments.",
+    },
+  },
+  {
+    id: 4,
+    title: "Fintech Payment Solution",
+    description: "A modern financial technology platform for seamless digital payments and transactions.",
+    images: [
+      "/placeholder.svg?height=600&width=1200",
+      "/placeholder.svg?height=600&width=1200&text=Payment+Dashboard",
+      "/placeholder.svg?height=600&width=1200&text=Analytics+View",
+    ],
+    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "AWS"],
+    liveLink: "#",
+    githubLink: "#",
+    isPrivateRepo: false,
+    details: {
+      overview:
+        "A comprehensive fintech solution that enables businesses and individuals to send, receive, and manage money digitally with enhanced security and convenience.",
+      features: [
+        "Instant payment processing",
+        "Multi-currency support",
+        "Advanced fraud detection",
+        "Financial analytics dashboard",
+        "API integration for businesses",
+        "Automated reconciliation",
+      ],
+      challenges:
+        "Implemented bank-grade security while maintaining a smooth user experience. Created a scalable architecture for high-volume transactions.",
     },
   },
 ]
-
 const ProjectModal = ({ project, isOpen, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
