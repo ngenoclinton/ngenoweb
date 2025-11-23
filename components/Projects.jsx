@@ -32,7 +32,7 @@ const projects = [
   liveLink: "https://reser-app-alpha.vercel.app/",
   githubLink: "https://github.com/ngenoclinton/reser.app",
   isPrivateRepo: false,
-  status: "development",
+  status: "live",
   details: {
     overview: "Reserv is a space booking platform built for the African and global market. It delivers instant M-Pesa payments with perfect success/failure/timeout handling, while actively adding seamless card payments (Stripe/Paystack) — creating a true dual-payment powerhouse. Built with Next.js 14 + Appwrite and deployed on Vercel.",
 
