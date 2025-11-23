@@ -10,11 +10,11 @@ const projects = [
   title: "Reserv — Space Booking",
   description: "A booking platform that combines lightning-fast M-Pesa STK Push and international card payments with instant feedback, smart availability, and seamless room management.",
   images: [
-    "/projects/reser/reserv_home.jpg",
-    "/projects/reser/reserv_rooms.jpg",
-    "/projects/reser/reserv_mpesa.jpg",
-    "/projects/reser/reserv_card.jpg",         // Coming soon screenshot
-    "/projects/reser/reserv_dashboard.jpg"     // Future admin/user dashboard
+    "/projects/reserve/reserv_home.jpg",
+    "/projects/reserve/reserv_rooms.png",
+    "/projects/reserve/reserv_calendar.jpg"     // Future admin/user dashboard
+    "/projects/reserve/reserv_mpesa.png",
+    "/projects/reserve/reserv_dashboard.jpg"     // Future admin/user dashboard
   ],
   technologies: [
     "Next.js",
