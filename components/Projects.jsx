@@ -8,7 +8,7 @@ const projects = [
   {
   id: 5,
   title: "Reserv — Space Booking",
-  description: "A booking platform that combines lightning-fast M-Pesa STK Push and international card payments with instant feedback, smart availability, and seamless room management.",
+  description: "A booking platform that combines lightning-fast M-Pesa STK Push and card payments with instant feedback, smart availability, and seamless room management.",
   images: [
     "/projects/reserve/reserv_home.jpg",
     "/projects/reserve/reserv_rooms.png",
@@ -34,7 +34,7 @@ const projects = [
   isPrivateRepo: false,
   status: "live",
   details: {
-    overview: "Reserv is a space booking platform built for the African and global market. It delivers instant M-Pesa payments with perfect success/failure/timeout handling, while actively adding seamless card payments (Stripe/Paystack) — creating a true dual-payment powerhouse. Built with Next.js 14 + Appwrite and deployed on Vercel.",
+    overview: "Reserv is a space booking platform. It delivers instant M-Pesa payments with perfect success/failure/timeout handling, while actively adding seamless card payments (Stripe/Paystack) — creating a true dual-payment powerhouse. Built with Next.js 14 + Appwrite and deployed on Vercel.",
 
     features: [
       "Instant M-Pesa STK Push with 100% accurate real-time feedback (success in less than 1s, wrong PIN, cancel, timeout)",
