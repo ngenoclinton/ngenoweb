@@ -7,7 +7,7 @@ import { ExternalLink, Github, X, Lock, ChevronLeft, ChevronRight, Clock, CheckC
 const projects = [
   {
   id: 5,
-  title: "Reserv — All-in-One Meeting Room Booking Platform",
+  title: "Reserv — Space Booking",
   description: "A booking platform that combines lightning-fast M-Pesa STK Push and international card payments with instant feedback, smart availability, and seamless room management.",
   images: [
     "/projects/reser/reserv_home.jpg",
