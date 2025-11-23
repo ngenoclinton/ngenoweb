@@ -6,6 +6,51 @@ import { ExternalLink, Github, X, Lock, ChevronLeft, ChevronRight, Clock, CheckC
 
 const projects = [
   {
+  id: 5,
+  title: "Reserv — All-in-One Meeting Room Booking Platform",
+  description: "A booking platform that combines lightning-fast M-Pesa STK Push and international card payments with instant feedback, smart availability, and seamless room management.",
+  images: [
+    "/projects/reser/reserv_home.jpg",
+    "/projects/reser/reserv_rooms.jpg",
+    "/projects/reser/reserv_mpesa.jpg",
+    "/projects/reser/reserv_card.jpg",         // Coming soon screenshot
+    "/projects/reser/reserv_dashboard.jpg"     // Future admin/user dashboard
+  ],
+  technologies: [
+    "Next.js",
+    "Tailwind CSS",
+    "Shadcn/ui",
+    "Appwrite (Auth + Database + Storage)",
+    "M-Pesa Daraja API (STK Push)",
+    "Stripe / Paystack (Card Payments – In Progress)",
+    "Zod",
+    "React Hook Form",
+    "Framer Motion",
+    "Sonner",
+    "Vercel"
+  ],
+  liveLink: "https://reser-app-alpha.vercel.app/",
+  githubLink: "https://github.com/ngenoclinton/reser.app",
+  isPrivateRepo: false,
+  status: "development",
+  details: {
+    overview: "Reserv is a space booking platform built for the African and global market. It delivers instant M-Pesa payments with perfect success/failure/timeout handling, while actively adding seamless card payments (Stripe/Paystack) — creating a true dual-payment powerhouse. Built with Next.js 14 + Appwrite and deployed on Vercel.",
+
+    features: [
+      "Instant M-Pesa STK Push with 100% accurate real-time feedback (success in less than 1s, wrong PIN, cancel, timeout)",
+      "International card payments via Stripe/Paystack (In Progress)",
+      "Smart room availability & calendar booking",
+      "Beautiful instant success/failure/cancelled modals",
+      "Admin room management with image upload (working in production)",
+      "User dashboard & booking history (coming next)",
+      "Multi-payment method selection at checkout",
+      "Fully responsive + mobile-first experience",
+    ],
+
+    challenges: "Taming M-Pesa’s callback system to deliver instant UI updates regardless of user action (correct PIN, wrong PIN, cancel, timeout) while keeping the database 100% accurate — all while fixing classic Vercel deployment traps (leaked API keys, 413 errors, broken server actions). Now laying the foundation for dual-payment (M-Pesa + Card) with a clean, scalable architecture that will support future features like wallets, subscriptions, and team accounts."
+  }
+},
+  {
     id: 1,
     title: "Data Safi Analytics",
     description:
