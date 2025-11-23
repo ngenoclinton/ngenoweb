@@ -12,9 +12,9 @@ const projects = [
   images: [
     "/projects/reserve/reserv_home.jpg",
     "/projects/reserve/reserv_rooms.png",
-    "/projects/reserve/reserv_calendar.png"     // Future admin/user dashboard
+    "/projects/reserve/reserv_calendar.png",    // Future admin/user dashboard
     "/projects/reserve/reserv_mpesa.png",
-    "/projects/reserve/reserv_dashboard.jpg"     // Future admin/user dashboard
+    "/projects/reserve/reserv_dashboard.jpg",    // Future admin/user dashboard
   ],
   technologies: [
     "Next.js",
